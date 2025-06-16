@@ -28,7 +28,6 @@ public class Level_01_Repeat_Yourself {
 
         admin = "Admin";
         employee= "";
-//        emailAddress = "thomasmuller" + generateRandomInt() + "@gmail.com";
         username= "Admin";
         password = "admin123";
     }
@@ -39,7 +38,7 @@ public class Level_01_Repeat_Yourself {
     }
 
     @Test
-    public void TC_01_Register(){
+    public void User_01_Register(){
         driver.findElement(By.xpath("//input[@name='username']")).sendKeys(username);
         driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -48,7 +47,7 @@ public class Level_01_Repeat_Yourself {
     }
 
     @Test
-    public void TC_02_Admin() throws InterruptedException {
+    public void User_02_Admin() throws InterruptedException {
         driver.findElement(By.xpath("//span[text()='Admin']")).click();
         driver.findElement(By.xpath("//div[@class='oxd-form-row']//input[@class='oxd-input oxd-input--active']")).sendKeys(admin);
         driver.findElement(By.xpath("//div[contains(@class, 'oxd-select-text') and contains(text(), '-- Select --')]")).click();
@@ -61,8 +60,7 @@ public class Level_01_Repeat_Yourself {
         Thread.sleep(7000);
     }
 
-//        int generateRandomInt () {
-//            return new Random().nextInt(99999);
-//        }
-//    }
+    private int generateRandomInt () {
+            return new Random().nextInt(99999);
+        }
 }
