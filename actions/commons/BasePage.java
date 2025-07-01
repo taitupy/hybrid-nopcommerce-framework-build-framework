@@ -1,9 +1,9 @@
 package commons;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -99,6 +99,10 @@ public class BasePage {
         return driver.findElement(By.xpath(locator));
     }
 
+    public List<WebElement> getListElement(WebDriver driver, String locator){
+        return driver.findElements(By.xpath(locator));
+    }
+
     public void clickToElement(WebDriver driver, String locator){
         getElement(driver, locator).click();
     }
@@ -141,6 +145,137 @@ public class BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getElementAttribute(WebDriver driver, String locator, String attributeName){
+        return getElement(driver, locator).getAttribute(attributeName);
+    }
+
+    public String getElementText(WebDriver driver, String locator){
+        return getElement(driver, locator).getText();
+    }
+
+    public String getElementCssValue(WebDriver driver, String locator, String propertyName){
+        return getElement(driver, locator).getCssValue(propertyName);
+    }
+
+    public String getHexaColorFromRGBA(String rgbaValue){
+        return Color.fromString(rgbaValue).asHex().toUpperCase();
+    }
+
+    public int getListElementNumber(WebDriver driver, String locator){
+        return getListElement(driver, locator).size();
+    }
+
+    public void checkToCheckboxRadio(WebDriver driver, String locator){
+        if (!getElement(driver, locator).isSelected()){
+            getElement(driver, locator).click();
+        }
+    }
+
+    public void unCheckToCheckbox(WebDriver driver, String locator){
+        if (getElement(driver, locator).isSelected()){
+            getElement(driver, locator).click();
+        }
+    }
+
+    public boolean isElementDisplayed(WebDriver driver, String locator){
+        return getElement(driver, locator).isDisplayed();
+    }
+
+    public boolean isElementEnable(WebDriver driver, String locator){
+        return getElement(driver, locator).isEnabled();
+    }
+
+    public boolean isElementSelected(WebDriver driver, String locator){
+        return getElement(driver, locator).isSelected();
+    }
+
+    public void switchToIframe(WebDriver driver, String locator){
+        driver.switchTo().frame(getElement(driver, locator));
+    }
+
+    public void switchToDefaultPage(WebDriver driver){
+        driver.switchTo().defaultContent();
+    }
+
+    public void hoverToElement(WebDriver driver, String locator){
+        new Actions(driver).moveToElement(getElement(driver, locator)).perform();
+    }
+
+    public void clickAndHoverToElement(WebDriver driver, String locator){
+        new Actions(driver).clickAndHold(getElement(driver, locator)).perform();
+    }
+
+    public void doubleClickToElement(WebDriver driver, String locator){
+        new Actions(driver).doubleClick(getElement(driver, locator)).perform();
+    }
+
+    public void rightClickToHoverToElement(WebDriver driver, String locator){
+        new Actions(driver).contextClick(getElement(driver, locator)).perform();
+    }
+
+    public void dragAndDropElement(WebDriver driver, String sourceLocator, String targetLocator){
+        new Actions(driver).dragAndDrop(getElement(driver, sourceLocator), getElement(driver, targetLocator)).perform();
+    }
+
+    public void pressKeyToElement(WebDriver driver, String locator, Keys keys){
+        new Actions(driver).sendKeys(getElement(driver, locator), keys).perform();
+    }
+
+    public void scrollToElement(WebDriver driver, String locator){
+        new Actions(driver).scrollToElement(getElement(driver, locator)).perform();
+    }
+
+    public void hightlightElement(WebDriver driver, String locator) {
+        WebElement element = getElement(driver, locator);
+        String originalStyle = element.getAttribute("style");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', arguments[1])", element, "border: 2px solid red; border-style: dashed;");
+        sleepInSeconds(2);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', arguments[1])", element, originalStyle);
+    }
+
+    public void clickToElementByJS(WebDriver driver, String locator) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, locator));
+        sleepInSeconds(3);
+    }
+
+    public void scrollToElementOnTopByJS(WebDriver driver, String locator) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getElement(driver, locator));
+    }
+
+    public void scrollToElementOnDownByJS(WebDriver driver, String locator) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", getElement(driver, locator));
+    }
+
+    public void scrollToBottomPageByJS(WebDriver driver) {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    }
+
+    public void setAttributeInDOM(WebDriver driver, String locator, String attributeName, String attributeValue) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('" + attributeName + "', '" + attributeValue + "');", getElement(driver, locator));
+    }
+
+    public void removeAttributeInDOM(WebDriver driver, String locator, String attributeRemove) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", getElement(driver, locator));
+    }
+
+    public void sendkeyToElementByJS(WebDriver driver, String locator, String value) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('value', '" + value + "')", getElement(driver, locator));
+    }
+
+    public String getAttributeInDOMByJS(WebDriver driver, String locator, String attributeName) {
+        return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].getAttribute('" + attributeName + "');", getElement(driver, locator));
+    }
+
+    public String getElementValidationMessage(WebDriver driver, String locator) {
+        return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", getElement(driver, locator));
+    }
+
+    public boolean isImageLoaded(WebDriver driver, String locator) {
+        return (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete " +
+                        "&& typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0",
+                getElement(driver, locator));
     }
 
 }
