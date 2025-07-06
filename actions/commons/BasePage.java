@@ -1,10 +1,8 @@
 package commons;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +12,10 @@ import java.util.List;
 import java.util.Set;
 
 public class BasePage {
+    public static BasePage getBasePage(){
+        return new BasePage();
+    }
+
     public void openPageUrl(WebDriver driver, String url){
         driver.get(url);
     }
@@ -96,11 +98,15 @@ public class BasePage {
     }
 
     public WebElement getElement(WebDriver driver, String locator){
-        return driver.findElement(By.xpath(locator));
+        return driver.findElement(getByXPath(locator));
     }
 
     public List<WebElement> getListElement(WebDriver driver, String locator){
-        return driver.findElements(By.xpath(locator));
+        return driver.findElements(getByXPath(locator));
+    }
+
+    public By getByXPath(String locator){
+        return By.xpath(locator);
     }
 
     public void clickToElement(WebDriver driver, String locator){
@@ -277,5 +283,23 @@ public class BasePage {
                         "&& typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0",
                 getElement(driver, locator));
     }
+
+    public void waitForElementVisible(WebDriver driver, String locator){
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXPath(locator)));
+    }
+
+    public void waitForElementPresence(WebDriver driver, String locator){
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(getByXPath(locator)));
+    }
+
+    public void waitForElementInvisible(WebDriver driver, String locator){
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXPath(locator)));
+    }
+
+    public void waitForElementClickable(WebDriver driver, String locator){
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXPath(locator)));
+    }
+
+
 
 }
