@@ -1,4 +1,11 @@
 package pageObjects;
 
-public class LoginPageObject {
+public class DashboardPageObject {
+    public boolean isDashboardPageDisplayed() {
+        // To-do
+        return false;
+    }
+
+    public void clickToAdminPage() {
+    }
 }
