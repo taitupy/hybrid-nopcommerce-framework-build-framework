@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NopCommerce Automation Testing">
 
-    <test name="Run on Firefox browser">
+    <test name="Run on Chrome browser">
         <classes>
             <class name="com.nopcommerce.Level_03_Page_Object_Parttern"/>
         </classes>

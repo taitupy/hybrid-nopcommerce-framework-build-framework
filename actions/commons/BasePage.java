@@ -213,6 +213,10 @@ public class BasePage {
         new Actions(driver).clickAndHold(getElement(driver, locator)).perform();
     }
 
+    public void releaseLeftMouse(WebDriver driver){
+        new Actions(driver).release();
+    }
+
     public void doubleClickToElement(WebDriver driver, String locator){
         new Actions(driver).doubleClick(getElement(driver, locator)).perform();
     }
