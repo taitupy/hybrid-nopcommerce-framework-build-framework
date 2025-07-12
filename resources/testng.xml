@@ -2,9 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NopCommerce Automation Testing">
 
-    <test name="Run on Chrome browser">
+    <test name="Run on Firefox browser">
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="com.nopcommerce.Level_03_Page_Object_Parttern"/>
+            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
+        </classes>
+    </test>
+
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
+        </classes>
+    </test>
+
+    <test name="Run on Edge browser">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
         </classes>
     </test>
 
