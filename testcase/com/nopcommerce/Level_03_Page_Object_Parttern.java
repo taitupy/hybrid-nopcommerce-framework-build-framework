@@ -28,6 +28,7 @@ public class Level_03_Page_Object_Parttern extends BaseTest {
         // Mo url len -> qa Home Page
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().maximize();
 
         // No dc sinh ra va bat dau lam cac action cua pgae do
         homePage = new HomePageObject(driver);
@@ -40,18 +41,11 @@ public class Level_03_Page_Object_Parttern extends BaseTest {
     }
 
     @Test
-    public void User_01_Register(){
-        // Action 1 - HomePage
-        homePage.enterToUsernameTextbox(username);
-
-        // Action 2 - HomePage
-        homePage.enterToPasswordTextbox(password);
-
-        // Action 3 - HomePage qa Dashboard
-        homePage.clickToDashboardPage();
-
+    public void User_01_Login(){
+        homePage.systemLogin(username, password);
         // Action 4 - Verify page Dashboard
         dashboardPage = new DashboardPageObject(driver);
+
         Assert.assertTrue(dashboardPage.isDashboardPageDisplayed());
     }
 
@@ -63,15 +57,7 @@ public class Level_03_Page_Object_Parttern extends BaseTest {
 
         // Tu Dashboard page -> Admin Page
         adminPage = new AdminPageObject(driver);
-        adminPage.enterToUsername(admin);
-
-        adminPage.clickToUserRole();
-
-        adminPage.enterToEmployeeName(employee);
-
-        adminPage.clickToStatus();
-
-        adminPage.clickToSearchButton();
+        adminPage.adminSearchPage(admin, employee);
 
         Assert.assertEquals(adminPage.getSearchValue(),"(1) Record Found");
     }

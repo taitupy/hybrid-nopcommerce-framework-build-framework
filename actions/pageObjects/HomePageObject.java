@@ -7,6 +7,7 @@ import pageUIs.HomePageUI;
 public class HomePageObject extends BasePage {
     private WebDriver driver;
 
+    // constructor
     public HomePageObject(WebDriver driver) {
         this.driver = driver;
     }
@@ -30,6 +31,18 @@ public class HomePageObject extends BasePage {
     }
 
     public void clickToDashboardPage() {
+        waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
+        clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
+    }
+
+    // Viet 3 ham thanh 1 ham Login system
+    public void systemLogin(String username, String password){
+        waitForElementVisible(driver, HomePageUI.USERNAME);
+        sendKeyToElement(driver, HomePageUI.USERNAME, username);
+
+        waitForElementVisible(driver, HomePageUI.PASSWORD);
+        sendKeyToElement(driver, HomePageUI.PASSWORD, password);
+
         waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
         clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
     }
