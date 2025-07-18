@@ -2,25 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NopCommerce Automation Testing">
 
-    <test name="Run on Firefox browser">
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
-        </classes>
-    </test>
+<!--    <test name="Run on Firefox browser">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.webdriver.Level_01_Wait_Element_Status"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="Run on Chrome browser">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
+            <class name="com.webdriver.Level_01_Wait_Element_Status"/>
         </classes>
     </test>
 
-    <test name="Run on Edge browser">
-        <parameter name="browser" value="edge"></parameter>
-        <classes>
-            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>
-        </classes>
-    </test>
+<!--    <test name="Run on Edge browser">-->
+<!--        <parameter name="browser" value="edge"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>
