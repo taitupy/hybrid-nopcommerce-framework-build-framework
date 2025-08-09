@@ -12,7 +12,7 @@
     <test name="Run on Chrome browser">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.webdriver.Level_01_Wait_Element_Status"/>
+            <class name="com.nopcommerce.Level_06_Page_Generator_03"/>
         </classes>
     </test>
 

@@ -16,8 +16,23 @@ public class DashboardPageObject extends BasePage {
         return isElementDisplayed(driver, DashboardPageUI.PIM_LINK);
     }
 
-    public void clickToAdminPage() {
+    //  Cach chua quan ly Page Generator Manager - C1
+//    public void clickToAdminPage() {
+//        waitForElementClickable(driver, DashboardPageUI.ADMIN_LINK);
+//        clickToElement(driver, DashboardPageUI.ADMIN_LINK);
+//    }
+
+    // Viet theo Page Generator Manager -C2
+//    public AdminPageObject clickToAdminPage() {
+//        waitForElementClickable(driver, DashboardPageUI.ADMIN_LINK);
+//        clickToElement(driver, DashboardPageUI.ADMIN_LINK);
+//        return new AdminPageObject(driver);
+//    }
+
+    // Viet theo Page Generator Manager -C3
+    public AdminPageObject clickToAdminPage() {
         waitForElementClickable(driver, DashboardPageUI.ADMIN_LINK);
         clickToElement(driver, DashboardPageUI.ADMIN_LINK);
+        return PageGenerator.getAdminPage(driver); // vi tri 2 cach 3
     }
 }

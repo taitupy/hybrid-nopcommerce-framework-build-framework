@@ -35,8 +35,34 @@ public class HomePageObject extends BasePage {
         clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
     }
 
-    // Viet 3 ham thanh 1 ham Login system
-    public void systemLogin(String username, String password){
+    // Viet 3 ham thanh 1 ham Login system - Cach chua quan ly Page Generator Manager - C1
+//    public void systemLogin(String username, String password){
+//        waitForElementVisible(driver, HomePageUI.USERNAME);
+//        sendKeyToElement(driver, HomePageUI.USERNAME, username);
+//
+//        waitForElementVisible(driver, HomePageUI.PASSWORD);
+//        sendKeyToElement(driver, HomePageUI.PASSWORD, password);
+//
+//        waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
+//        clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
+//    }
+
+//    // Viet theo Page Generator Manager -C2
+//    public DashboardPageObject systemLogin(String username, String password){
+//        waitForElementVisible(driver, HomePageUI.USERNAME);
+//        sendKeyToElement(driver, HomePageUI.USERNAME, username);
+//
+//        waitForElementVisible(driver, HomePageUI.PASSWORD);
+//        sendKeyToElement(driver, HomePageUI.PASSWORD, password);
+//
+//        waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
+//        clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
+//
+//        return new DashboardPageObject(driver);
+//    }
+
+    // Viet theo Page Generator Manager -C3
+    public DashboardPageObject systemLogin(String username, String password){
         waitForElementVisible(driver, HomePageUI.USERNAME);
         sendKeyToElement(driver, HomePageUI.USERNAME, username);
 
@@ -45,5 +71,7 @@ public class HomePageObject extends BasePage {
 
         waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
         clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
+
+        return PageGenerator.getDashboardPage(driver); // vi tri 2 cach 3
     }
 }
