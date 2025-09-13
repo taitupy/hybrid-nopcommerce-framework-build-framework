@@ -6,6 +6,14 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.AdminPageObject;
+import pageObjects.PIMPageObject;
+import pageObjects.PageGenerator;
+import pageObjects.TimePageObject;
+import pageUIs.AdminPageUI;
+import pageUIs.BasePageUI;
+import pageUIs.PIMPageUI;
+import pageUIs.TimePageUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -304,6 +312,22 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXPath(locator)));
     }
 
+    public PIMPageObject openPimPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.PIM_LINK);
+        clickToElement(driver, BasePageUI.PIM_LINK);
+        return PageGenerator.getPIMPage(driver);
+    }
 
+    public TimePageObject openTimePage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.TIME_LINK);
+        clickToElement(driver, BasePageUI.TIME_LINK);
+        return PageGenerator.getTimePage(driver);
+    }
+
+    public AdminPageObject openAdminPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.ADMIN_LINK);
+        clickToElement(driver, BasePageUI.ADMIN_LINK);
+        return PageGenerator.getAdminPage(driver);
+    }
 
 }

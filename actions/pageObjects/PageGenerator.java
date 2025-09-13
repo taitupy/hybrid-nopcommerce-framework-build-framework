@@ -14,4 +14,12 @@ public class PageGenerator {
     public static AdminPageObject getAdminPage(WebDriver driver){
         return new AdminPageObject(driver);
     }
+
+    public static PIMPageObject getPIMPage(WebDriver driver){
+        return new PIMPageObject(driver);
+    }
+
+    public static TimePageObject getTimePage(WebDriver driver){
+        return new TimePageObject(driver);
+    }
 }

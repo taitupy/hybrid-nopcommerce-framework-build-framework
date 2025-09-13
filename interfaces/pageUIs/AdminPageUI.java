@@ -9,4 +9,5 @@ public class AdminPageUI {
     public static final String STATUS_ENABLE = "//div[@role='option']//span[text()='Enabled']";
     public static final String SEARCH_BUTTON = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']";
     public static final String ADMIN_SEARCH_SUCCESS_MESSAGE = "//div[contains(@class, 'orangehrm-vertical-padding')]/span";
+
 }

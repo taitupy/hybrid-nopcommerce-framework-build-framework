@@ -68,4 +68,6 @@ public class AdminPageObject extends BasePage {
         waitForElementVisible(driver, AdminPageUI.ADMIN_SEARCH_SUCCESS_MESSAGE);
         return getElementText(driver, AdminPageUI.ADMIN_SEARCH_SUCCESS_MESSAGE);
     }
+
+
 }
