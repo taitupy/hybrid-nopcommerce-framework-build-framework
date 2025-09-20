@@ -5,10 +5,11 @@ import org.openqa.selenium.WebDriver;
 import pageUIs.AdminPageUI;
 import pageUIs.HomePageUI;
 
-public class AdminPageObject extends BasePage {
+public class AdminPageObject extends SidebarPageObject {
     private WebDriver driver;
 
     public AdminPageObject(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 

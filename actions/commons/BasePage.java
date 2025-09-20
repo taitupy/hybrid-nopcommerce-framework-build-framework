@@ -10,10 +10,7 @@ import pageObjects.AdminPageObject;
 import pageObjects.PIMPageObject;
 import pageObjects.PageGenerator;
 import pageObjects.TimePageObject;
-import pageUIs.AdminPageUI;
-import pageUIs.BasePageUI;
-import pageUIs.PIMPageUI;
-import pageUIs.TimePageUI;
+import pageUIs.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -312,18 +309,21 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXPath(locator)));
     }
 
+    /* Only use for Level_07_Switch_Page_Object  */
     public PIMPageObject openPimPage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.PIM_LINK);
         clickToElement(driver, BasePageUI.PIM_LINK);
         return PageGenerator.getPIMPage(driver);
     }
 
+    /* Only use for Level_07_Switch_Page_Object  */
     public TimePageObject openTimePage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.TIME_LINK);
         clickToElement(driver, BasePageUI.TIME_LINK);
         return PageGenerator.getTimePage(driver);
     }
 
+    /* Only use for Level_07_Switch_Page_Object  */
     public AdminPageObject openAdminPage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.ADMIN_LINK);
         clickToElement(driver, BasePageUI.ADMIN_LINK);
