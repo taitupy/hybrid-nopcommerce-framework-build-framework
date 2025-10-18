@@ -7,16 +7,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.AdminPageObject;
-import pageObjects.DashboardPageObject;
-import pageObjects.HomePageObject;
+import pageObjects.user.UserPO;
+import pageObjects.user.DashboardPO;
+import pageObjects.user.HomePO;
 import pageObjects.PageGenerator;
 
 public class Level_06_Page_Generator_03 extends BaseTest {
     private WebDriver driver;
-    private HomePageObject homePage;
-    private DashboardPageObject dashboardPage;
-    private AdminPageObject adminPage;
+    private HomePO homePage;
+    private DashboardPO dashboardPage;
+    private UserPO adminPage;
     private String admin, employee, username, password;
 
     @Parameters("browser")
@@ -26,7 +26,7 @@ public class Level_06_Page_Generator_03 extends BaseTest {
         driver.manage().window().maximize();
 
         // C3- Page_Generator - Vi tri 1
-        homePage = PageGenerator.getHomePage(driver);
+        homePage = PageGenerator.getUserHomePage(driver);
 
         // Tao data test
         admin = "Admin";

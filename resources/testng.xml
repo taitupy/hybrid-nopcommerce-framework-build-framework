@@ -2,25 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NopCommerce Automation Testing">
 
-<!--    <test name="Run on Firefox browser">-->
-<!--        <parameter name="browser" value="firefox"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.webdriver.Level_01_Wait_Element_Status"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <parameter name="userUrl" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
+    <parameter name="adminUrl" value="https://live.techpanda.org/index.php/" />
 
     <test name="Run on Chrome browser">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.nopcommerce.Level_08_Page_Navigation"/>
+            <class name="com.nopcommerce.Level_09_Switch_Site_Url"/>
         </classes>
     </test>
 
-<!--    <test name="Run on Edge browser">-->
-<!--        <parameter name="browser" value="edge"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    <test name="Run on Edge browser">-->
+    <!--        <parameter name="browser" value="edge"></parameter>-->
+    <!--        <classes>-->
+    <!--            <class name="com.nopcommerce.Level_04_Multiple_Browser"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <!--    <test name="Run on Firefox browser">-->
+    <!--        <parameter name="browser" value="firefox"></parameter>-->
+    <!--        <classes>-->
+    <!--            <class name="com.webdriver.Level_01_Wait_Element_Status"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
 
 </suite>

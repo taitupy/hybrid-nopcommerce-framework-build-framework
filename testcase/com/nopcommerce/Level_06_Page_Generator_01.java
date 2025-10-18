@@ -7,15 +7,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.AdminPageObject;
-import pageObjects.DashboardPageObject;
-import pageObjects.HomePageObject;
+import pageObjects.user.UserPO;
+import pageObjects.user.DashboardPO;
+import pageObjects.user.HomePO;
 
 public class Level_06_Page_Generator_01 extends BaseTest {
     private WebDriver driver;
-    private HomePageObject homePage;
-    private DashboardPageObject dashboardPage;
-    private AdminPageObject adminPage;
+    private HomePO homePage;
+    private DashboardPO dashboardPage;
+    private UserPO adminPage;
     private String admin, employee, username, password;
 
     @Parameters("browser")
@@ -27,7 +27,7 @@ public class Level_06_Page_Generator_01 extends BaseTest {
         driver.manage().window().maximize();
 
         // No dc sinh ra va bat dau lam cac action cua pgae do
-        homePage = new HomePageObject(driver);
+        homePage = new HomePO(driver);
 
         // Tao data test
         admin = "Admin";
@@ -42,7 +42,7 @@ public class Level_06_Page_Generator_01 extends BaseTest {
 
         // The hien truc tiep tren Test Class
         // Sai nguyen tac OOP
-        dashboardPage = new DashboardPageObject(driver); // page B: Dashboard Page
+        dashboardPage = new DashboardPO(driver); // page B: Dashboard Page
 
         Assert.assertTrue(dashboardPage.isDashboardPageDisplayed());
     }
@@ -50,11 +50,11 @@ public class Level_06_Page_Generator_01 extends BaseTest {
     @Test
     public void User_02_Admin() {
         // Tu Dashboard page
-        dashboardPage = new DashboardPageObject(driver);
+        dashboardPage = new DashboardPO(driver);
         dashboardPage.clickToAdminPage();
 
         // Tu Dashboard page -> Admin Page
-        adminPage = new AdminPageObject(driver);
+        adminPage = new UserPO(driver);
         adminPage.adminSearchPage(admin, employee);
 
         Assert.assertEquals(adminPage.getSearchValue(),"(1) Record Found");

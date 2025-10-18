@@ -6,11 +6,11 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.AdminPageObject;
-import pageObjects.PIMPageObject;
+import pageObjects.user.UserPO;
+import pageObjects.user.PIMPO;
 import pageObjects.PageGenerator;
-import pageObjects.TimePageObject;
-import pageUIs.*;
+import pageObjects.user.TimePO;
+import pageUIs.BasePageUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -50,7 +50,7 @@ public class BasePage {
     }
 
     public Alert waitAlertPresence(WebDriver driver){
-        return new WebDriverWait(driver, Duration.ofSeconds(15))
+        return new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
                 .until(ExpectedConditions.alertIsPresent());
     }
 
@@ -102,12 +102,38 @@ public class BasePage {
         driver.switchTo().window(parentID);
     }
 
-    public WebElement getElement(WebDriver driver, String locator){
-        return driver.findElement(getByXPath(locator));
+    protected WebElement getElement(WebDriver driver, String locator){
+        return driver.findElement(getByLocator(locator));
     }
 
-    public List<WebElement> getListElement(WebDriver driver, String locator){
-        return driver.findElements(getByXPath(locator));
+    protected List<WebElement> getListElement(WebDriver driver, String locator){
+        return driver.findElements(getByLocator(locator));
+    }
+
+    // Truyen vao tham so loai gi thi tra ve kieu By tuong ung
+    // String prefix : css/id/name/class => By.css/ By.id/ By.name/ ..
+    // Convention: css/Css/ CSS - id/ID/Id - ...
+    // css = button#login => By.cssSelector("button#login");
+    // Css = button#login => By.cssSelector("button#login");
+    // CSS = button#login => By.cssSelector("button#login");
+    private By getByLocator(String prefixLocator){ // css=button#login : Lay ow vi tri so 4
+        By by = null;
+        if(prefixLocator.toUpperCase().startsWith("CSS")){
+            by = By.cssSelector(prefixLocator.substring(4));
+        } else if(prefixLocator.toUpperCase().startsWith("ID")){
+            by = By.id(prefixLocator.substring(3));
+        }else if(prefixLocator.toUpperCase().startsWith("CLASS")){
+            by = By.className(prefixLocator.substring(6));
+        }else if(prefixLocator.toUpperCase().startsWith("NAME")){
+            by = By.name(prefixLocator.substring(5));
+        }else if(prefixLocator.toUpperCase().startsWith("TAGNAME")){
+            by = By.tagName(prefixLocator.substring(8));
+        }else if(prefixLocator.toUpperCase().startsWith("XPATH")){
+            by = By.xpath(prefixLocator.substring(6));
+        }else{
+            throw new RuntimeException("Locator type is not support !!!");
+        }
+        return by;
     }
 
     public By getByXPath(String locator){
@@ -138,7 +164,7 @@ public class BasePage {
         getElement(driver, parentLocator).click();
         sleepInSeconds(2);
 
-        List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(15))
+        List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childItemLocator)));
 
         sleepInSeconds(2);
@@ -294,40 +320,39 @@ public class BasePage {
     }
 
     public void waitForElementVisible(WebDriver driver, String locator){
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXPath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
     }
 
     public void waitForElementPresence(WebDriver driver, String locator){
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(getByXPath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT)).until(ExpectedConditions.presenceOfElementLocated(getByLocator(locator)));
     }
 
     public void waitForElementInvisible(WebDriver driver, String locator){
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXPath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
     }
 
     public void waitForElementClickable(WebDriver driver, String locator){
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXPath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT)).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
     /* Only use for Level_07_Switch_Page_Object  */
-    public PIMPageObject openPimPage(WebDriver driver) {
+    public PIMPO openPimPage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.PIM_LINK);
         clickToElement(driver, BasePageUI.PIM_LINK);
         return PageGenerator.getPIMPage(driver);
     }
 
     /* Only use for Level_07_Switch_Page_Object  */
-    public TimePageObject openTimePage(WebDriver driver) {
+    public TimePO openTimePage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.TIME_LINK);
         clickToElement(driver, BasePageUI.TIME_LINK);
         return PageGenerator.getTimePage(driver);
     }
 
     /* Only use for Level_07_Switch_Page_Object  */
-    public AdminPageObject openAdminPage(WebDriver driver) {
+    public UserPO openAdminPage(WebDriver driver) {
         waitForElementClickable(driver, BasePageUI.ADMIN_LINK);
         clickToElement(driver, BasePageUI.ADMIN_LINK);
-        return PageGenerator.getAdminPage(driver);
+        return PageGenerator.getUserPage(driver);
     }
-
 }

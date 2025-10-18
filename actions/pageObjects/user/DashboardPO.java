@@ -1,13 +1,14 @@
-package pageObjects;
+package pageObjects.user;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.DashboardPageUI;
+import pageObjects.PageGenerator;
+import pageUIs.user.DashboardPageUI;
 
-public class DashboardPageObject extends BasePage {
+public class DashboardPO extends BasePage {
     private WebDriver driver;
 
-    public DashboardPageObject(WebDriver driver) {
+    public DashboardPO(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -30,9 +31,9 @@ public class DashboardPageObject extends BasePage {
 //    }
 
     // Viet theo Page Generator Manager -C3
-    public AdminPageObject clickToAdminPage() {
+    public UserPO clickToAdminPage() {
         waitForElementClickable(driver, DashboardPageUI.ADMIN_LINK);
         clickToElement(driver, DashboardPageUI.ADMIN_LINK);
-        return PageGenerator.getAdminPage(driver); // vi tri 2 cach 3
+        return PageGenerator.getUserPage(driver); // vi tri 2 cach 3
     }
 }

@@ -28,8 +28,29 @@ public class BaseTest {
                 throw new RuntimeException("Browser is not valid.");
         }
 
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get(GlobalConstants.DEV_USER_URL);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+        return driver;
+    }
+
+    protected WebDriver getBrowserDriver(String browserName, String url){
+        BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+        switch(browserList){
+            case FIREFOX:
+                driver = new FirefoxDriver();
+                break;
+            case CHROME:
+                driver = new ChromeDriver();
+                break;
+            case EDGE:
+                driver = new EdgeDriver();
+                break;
+            default:
+                throw new RuntimeException("Browser is not valid.");
+        }
+
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
         return driver;
     }
 

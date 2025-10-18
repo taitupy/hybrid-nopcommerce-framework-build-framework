@@ -1,4 +1,4 @@
-package pageUIs;
+package pageUIs.user;
 
 public class HomePageUI {
     // public: page object dùng lại bên page ui
@@ -11,7 +11,7 @@ public class HomePageUI {
     // non-final: có thể update lại giá trị của biến từ pageUI
     // String : tất cả locator đều nhận vào kiểu String
     // tên biến, vì sao viết hoa và dùng dấu gạch dưới: cần đặt tên theo kiểu constant trong Java, mang ý nghĩa ko thay đổi giá trị khi chạy
-    public static final String USERNAME = "//input[@name='username']";
-    public static final String PASSWORD = "//input[@name='password']";
-    public static final String SUBMIT_BUTTON = "//button[@type='submit']";
+    public static final String USERNAME = "xpath=//input[@name='username']";
+    public static final String PASSWORD = "xpath=//input[@name='password']";
+    public static final String SUBMIT_BUTTON = "xpath=//button[@type='submit']";
 }

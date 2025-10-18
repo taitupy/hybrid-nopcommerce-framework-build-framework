@@ -1,14 +1,15 @@
-package pageObjects;
+package pageObjects.user;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.HomePageUI;
+import pageObjects.PageGenerator;
+import pageUIs.user.HomePageUI;
 
-public class HomePageObject extends BasePage {
+public class HomePO extends BasePage {
     private WebDriver driver;
 
     // constructor
-    public HomePageObject(WebDriver driver) {
+    public HomePO(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -62,7 +63,7 @@ public class HomePageObject extends BasePage {
 //    }
 
     // Viet theo Page Generator Manager -C3
-    public DashboardPageObject systemLogin(String username, String password){
+    public DashboardPO systemLogin(String username, String password){
         waitForElementVisible(driver, HomePageUI.USERNAME);
         sendKeyToElement(driver, HomePageUI.USERNAME, username);
 
@@ -72,6 +73,6 @@ public class HomePageObject extends BasePage {
         waitForElementClickable(driver, HomePageUI.SUBMIT_BUTTON);
         clickToElement(driver, HomePageUI.SUBMIT_BUTTON);
 
-        return PageGenerator.getDashboardPage(driver); // vi tri 2 cach 3
+        return PageGenerator.getUserDashboardPage(driver); // vi tri 2 cach 3
     }
 }
