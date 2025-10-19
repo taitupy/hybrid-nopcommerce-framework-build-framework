@@ -12,6 +12,7 @@ public class SidebarPO extends BasePage {
         this.driver = driver;
     }
 
+    /* Only use for Level_08_Page_Navigation */
     public PIMPO openPimPage() {
         waitForElementClickable(driver, SidebarPageUI.PIM_LINK);
         clickToElement(driver, SidebarPageUI.PIM_LINK);
@@ -29,4 +30,26 @@ public class SidebarPO extends BasePage {
         clickToElement(driver, SidebarPageUI.ADMIN_LINK);
         return PageGenerator.getUserPage(driver);
     }
+
+    public SidebarPO openSidebarLinkByPageName(String pageName) {
+        waitForElementClickable(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);
+        clickToElement(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);
+
+        switch (pageName){
+            case "PIM":
+                return PageGenerator.getPIMPage(driver);
+            case "Time":
+                return PageGenerator.getTimePage(driver);
+            case "Admin":
+                return PageGenerator.getUserPage(driver);
+            default:
+                throw new RuntimeException("Page name is not valid!!!s");
+        }
+    }
+
+    public void openSidebarLinkByPageNames(String pageName) {
+        waitForElementClickable(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);
+        clickToElement(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);
+    }
+
 }
