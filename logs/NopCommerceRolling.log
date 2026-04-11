@@ -34,3 +34,12 @@
 [2026-03-23 22:46:03,986 com.nopcommerce.Level_14_Log4j] ---------------------- FAILED -------------------------
 [2026-03-23 22:46:03,994 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
 [2026-03-23 22:46:06,225 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 07 - OPEN TO TIME PAGE
+[2026-04-11 09:50:04,067 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 01 - OPEN HOME PAGEAdmin
+[2026-04-11 09:50:05,154 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 02 - VERIFY MOVE TO DASHBOARD PAGEAdmin
+[2026-04-11 09:50:07,055 com.nopcommerce.Level_14_Log4j] ---------------------- PASSED -------------------------
+[2026-04-11 09:50:07,071 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 03 - OPEN TO ADMIN PAGE
+[2026-04-11 09:50:08,697 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 04 - CLICK TO ADIMIN SEARCH PAGE
+[2026-04-11 09:50:10,550 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 05 - VERIFY ADMIN PAGEAdmin
+[2026-04-11 09:50:11,063 com.nopcommerce.Level_14_Log4j] ---------------------- FAILED -------------------------
+[2026-04-11 09:50:11,075 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
+[2026-04-11 09:50:12,173 com.nopcommerce.Level_14_Log4j] User_01_Login - STEP 07 - OPEN TO TIME PAGE

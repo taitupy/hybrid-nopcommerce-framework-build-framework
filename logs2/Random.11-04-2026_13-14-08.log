@@ -1,0 +1,18 @@
+[11-04-2026 13:14:14.274 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 01 - OPEN HOME PAGEAdmin
+[11-04-2026 13:14:15.279 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 02 - VERIFY MOVE TO DASHBOARD PAGEAdmin
+[11-04-2026 13:14:17.053 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 13:14:17.062 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 03 - OPEN TO ADMIN PAGE
+[11-04-2026 13:14:18.234 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 04 - CLICK TO ADIMIN SEARCH PAGE
+[11-04-2026 13:14:19.747 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 05 - VERIFY ADMIN PAGEAdmin
+[11-04-2026 13:14:20.267 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 13:14:20.269 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
+[11-04-2026 13:14:21.507 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 07 - OPEN TO TIME PAGE
+[11-04-2026 13:14:33.298 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 01 - OPEN HOME PAGEAdmin
+[11-04-2026 13:14:35.470 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 02 - VERIFY MOVE TO DASHBOARD PAGEAdmin
+[11-04-2026 13:14:36.024 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 13:14:36.027 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 03 - OPEN TO ADMIN PAGE
+[11-04-2026 13:14:37.444 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 04 - CLICK TO ADIMIN SEARCH PAGE
+[11-04-2026 13:14:38.820 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 05 - VERIFY ADMIN PAGEAdmin
+[11-04-2026 13:14:39.189 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 13:14:39.197 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
+[11-04-2026 13:14:40.359 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 07 - OPEN TO TIME PAGE

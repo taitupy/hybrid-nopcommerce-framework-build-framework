@@ -1,0 +1,9 @@
+[11-04-2026 13:44:38.508 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 01 - OPEN HOME PAGEAdmin
+[11-04-2026 13:44:39.586 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 02 - VERIFY MOVE TO DASHBOARD PAGEAdmin
+[11-04-2026 13:44:41.341 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 13:44:41.358 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 03 - OPEN TO ADMIN PAGE
+[11-04-2026 13:44:42.571 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 04 - CLICK TO ADIMIN SEARCH PAGE
+[11-04-2026 13:44:44.196 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 05 - VERIFY ADMIN PAGEAdmin
+[11-04-2026 13:44:44.700 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- FAILED -------------------------
+[11-04-2026 13:44:44.885 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
+[11-04-2026 13:44:46.015 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 07 - OPEN TO TIME PAGE
