@@ -70,3 +70,18 @@
 [11-04-2026 13:44:44.700 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- FAILED -------------------------
 [11-04-2026 13:44:44.885 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 06 - OPEN TO ADMIN PAGE
 [11-04-2026 13:44:46.015 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 07 - OPEN TO TIME PAGE
+[11-04-2026 22:43:21.967 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 01 - OPEN HOME PAGEAdmin
+[11-04-2026 22:43:22.836 INFO com.nopcommerce.Level_14_Log4j] - User_01_Login - STEP 02 - VERIFY MOVE TO DASHBOARD PAGEAdmin
+[11-04-2026 22:43:24.523 INFO com.nopcommerce.Level_14_Log4j] - ---------------------- PASSED -------------------------
+[11-04-2026 22:45:43.599 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:45:46.402 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------
+[11-04-2026 22:55:23.716 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:55:26.916 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------
+[11-04-2026 22:56:22.478 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:56:26.402 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------
+[11-04-2026 22:56:48.676 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:56:52.607 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------
+[11-04-2026 22:59:13.257 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:59:17.082 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------
+[11-04-2026 22:59:36.657 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- PASSED -------------------------
+[11-04-2026 22:59:40.398 INFO com.nopcommerce.Level_15_ExtentReport] - ---------------------- FAILED -------------------------

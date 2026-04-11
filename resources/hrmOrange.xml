@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NopCommerce Automation Testing">
+
+    <listeners>
+        <listener class-name="commons.MethodListener"></listener>
+        <listener class-name="reportConfigs.ExtentListener"></listener>
+    </listeners>
+
+    <parameter name="userUrl" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
+    <parameter name="adminUrl" value="https://live.techpanda.org/index.php/" />
+
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.nopcommerce.Level_15_ExtentReport"/>
+        </classes>
+    </test>
+
+    <test name="Run on Firefox browser">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.nopcommerce.Level_15_ExtentReport"/>
+        </classes>
+    </test>
+
+</suite>
