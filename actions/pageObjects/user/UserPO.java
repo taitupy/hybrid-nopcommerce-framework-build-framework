@@ -1,5 +1,6 @@
 package pageObjects.user;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageUIs.user.UserPageUI;
 
@@ -42,6 +43,7 @@ public class UserPO extends SidebarPO {
         clickToElement(driver, UserPageUI.SEARCH_BUTTON);
     }
 
+    @Step("CLICK TO ADMIN SEARCH PAGE")
     public void adminSearchPage(String admin, String employee){
         waitForElementVisible(driver, UserPageUI.USERNAME_TEXTBOX);
         sendKeyToElement(driver, UserPageUI.USERNAME_TEXTBOX, admin);

@@ -1,6 +1,7 @@
 package pageObjects.user;
 
 import commons.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageGenerator;
 import pageUIs.user.DashboardPageUI;
@@ -12,6 +13,7 @@ public class DashboardPO extends BasePage {
         this.driver = driver;
     }
 
+    @Step("VERIFY MOVE TO DASHBOARD PAGE")
     public boolean isDashboardPageDisplayed() {
         waitForElementVisible(driver, DashboardPageUI.PIM_LINK);
         return isElementDisplayed(driver, DashboardPageUI.PIM_LINK);
@@ -31,6 +33,7 @@ public class DashboardPO extends BasePage {
 //    }
 
     // Viet theo Page Generator Manager -C3
+    @Step("CLICK TO ADMIN PAGE")
     public UserPO clickToAdminPage() {
         waitForElementClickable(driver, DashboardPageUI.ADMIN_LINK);
         clickToElement(driver, DashboardPageUI.ADMIN_LINK);

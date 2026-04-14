@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3944","User_02_Admin","NopCommerce Automation Testing","2026-04-14","failed","2026-04-14","com.nopcommerce.Level_16_AllureReport","Run on Chrome browser","com.nopcommerce.Level_16_AllureReport","User_02_Admin"
+"","2636","User_03_Dynamic_Locator","NopCommerce Automation Testing","2026-04-14","passed","2026-04-14","com.nopcommerce.Level_16_AllureReport","Run on Chrome browser","com.nopcommerce.Level_16_AllureReport","User_03_Dynamic_Locator"
+"","3573","User_01_Login","NopCommerce Automation Testing","2026-04-14","passed","2026-04-14","com.nopcommerce.Level_16_AllureReport","Run on Chrome browser","com.nopcommerce.Level_16_AllureReport","User_01_Login"

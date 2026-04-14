@@ -1,6 +1,7 @@
 package pageObjects.user;
 
 import commons.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageGenerator;
 import pageUIs.user.SidebarPageUI;
@@ -31,6 +32,7 @@ public class SidebarPO extends BasePage {
         return PageGenerator.getUserPage(driver);
     }
 
+    @Step("OPEN TO ADMIN PAGE")
     public SidebarPO openSidebarLinkByPageName(String pageName) {
         waitForElementClickable(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);
         clickToElement(driver, SidebarPageUI.DYNAMIC_LINK_BY_PAGE_NAME, pageName);

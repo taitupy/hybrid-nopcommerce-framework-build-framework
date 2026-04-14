@@ -1,6 +1,7 @@
 package pageObjects.user;
 
 import commons.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageGenerator;
 import pageUIs.user.HomePageUI;
@@ -63,6 +64,7 @@ public class HomePO extends BasePage {
 //    }
 
     // Viet theo Page Generator Manager -C3
+    @Step("Open Home page")
     public DashboardPO systemLogin(String username, String password){
         waitForElementVisible(driver, HomePageUI.USERNAME);
         sendKeyToElement(driver, HomePageUI.USERNAME, username);
